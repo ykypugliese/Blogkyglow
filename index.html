@@ -9,5 +9,26 @@
 <body>
     <h1>Bem-vindo ao meu site!</h1>
     <p>Este é meu primeiro site no GitHub Pages.</p>
+
+    <!-- Incluir o Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
+
+    <script>
+        // Sua configuração do Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyDiSwn1GWhnShjmCYaYjTZMSrOi-5pQnkU",
+            authDomain: "blogkyglow.firebaseapp.com",
+            projectId: "blogkyglow",
+            storageBucket: "blogkyglow.firebasestorage.app",
+            messagingSenderId: "934944028118",
+            appId: "1:934944028118:web:03f1d0baafcee856582077"
+        };
+
+        // Inicializar o Firebase
+        const app = firebase.initializeApp(firebaseConfig);
+
+        // Agora você pode começar a usar o Firebase Database ou outras funcionalidades
+    </script>
 </body>
 </html>
