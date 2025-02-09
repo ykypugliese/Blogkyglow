@@ -1,10 +1,33 @@
-body {
-    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
-    background-color: #f0f5ff; /* Fundo azul claro */
-    color: #000; /* Texto preto */
-    text-align: center;
+/* Importando a fonte San Francisco */
+@font-face {
+  font-family: "San Francisco";
+  src: url("https://cdn.jsdelivr.net/gh/sahibjotsaggu/SFUIText-CSS/sf-ui-text-regular.woff2") format("woff2");
 }
 
-h1 {
-    color: #007AFF; /* Azul do iOS */
+/* Estilizando o corpo do site */
+body {
+  font-family: "San Francisco", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  background-color: #f0f5ff; /* Azul claro */
+  color: #000; /* Texto preto */
+  text-align: center;
+}
+
+/* Deixando os títulos azuis */
+h1, h2, h3 {
+  color: #007AFF; /* Azul do iOS */
+}
+
+/* Estilizando os botões */
+button {
+  background-color: #007AFF; /* Azul do iOS */
+  color: #fff; /* Texto branco */
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #005FCC; /* Azul mais escuro no hover */
 }
