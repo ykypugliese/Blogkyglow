@@ -10,6 +10,9 @@
     <h1>Bem-vindo ao meu site!</h1>
     <p>Este é meu primeiro site no GitHub Pages.</p>
 
+    <!-- Área para exibir os posts -->
+    <div id="posts-container"></div>
+
     <!-- Incluir o Firebase SDK -->
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
@@ -28,7 +31,31 @@
         // Inicializar o Firebase
         const app = firebase.initializeApp(firebaseConfig);
 
-        // Agora você pode começar a usar o Firebase Database ou outras funcionalidades
+        // Referência para o banco de dados
+        const database = firebase.database();
+
+        // Função para carregar os posts do Firebase
+        function loadPosts() {
+            const postsRef = database.ref('posts'); // 'posts' é o nó onde seus posts são armazenados
+            postsRef.on('value', function(snapshot) {
+                const postsContainer = document.getElementById('posts-container');
+                postsContainer.innerHTML = ''; // Limpar os posts antigos
+
+                snapshot.forEach(function(childSnapshot) {
+                    const post = childSnapshot.val();
+                    const postElement = document.createElement('div');
+                    postElement.classList.add('post');
+                    postElement.innerHTML = `
+                        <h2>${post.title}</h2>
+                        <p>${post.content}</p>
+                    `;
+                    postsContainer.appendChild(postElement);
+                });
+            });
+        }
+
+        // Carregar os posts ao carregar a página
+        loadPosts();
     </script>
 </body>
 </html>
