@@ -1,0 +1,10 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    background-color: #f0f5ff; /* Fundo azul claro */
+    color: #000; /* Texto preto */
+    text-align: center;
+}
+
+h1 {
+    color: #007AFF; /* Azul do iOS */
+}
